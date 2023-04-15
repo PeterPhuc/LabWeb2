@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+<body>
+    <button id="Name">Nhập thông tin</button>
+    <p>Họ tên sinh viên: <span></span></p>
+    <p>Môn học: <span></span></p>
+    <p>Xếp loại: <span></span></p>
+    <script>
+        const btn = document.getElementById('Name');
+        const spans = document.querySelectorAll('span');
+        let info = [];                 //info lưu trữ tên và môn học
+        let point_list = [];           //point_list lưu trữ 4 cột điểm
+        btn.addEventListener('click', function(){
+            let name = prompt("Nhập họ và tên: ", "").trim();
+            if(name){
+                let mon_hoc = prompt("Nhập tên môn học: ", "").trim();
+                if(mon_hoc){
+                    info.push(name);
+                    info.push(mon_hoc);           //Thêm tên và môn vào info
+
+                    NhapDiem('Lab1', 3)
+                        .then(function(){
+                            return NhapDiem('Lab2', 4);
+                        })
+                        .then(function(){
+                            return NhapDiem('Lab3', 3);
+                        })
+                        .then(function(){
+                            return NhapDiem('Thi Final', 0);
+                        })
+                        .catch(function(){
+                            alert('Hãy nhập lại thông tin!!!')
+                        })
+                        .finally(render)         //Nếu nhập xong 4 cột điểm lab thì thực hiện tính toán điểm trung bình và xuất ra giao diện
+                }
+            }
+        })
+
+        function NhapDiem(name_lab, time){
+            return new Promise(function(resolve, reject){
+                let diem = prompt(`Nhập điểm ${name_lab}: `, "").trim();   
+                const floatRegex = /^[+]?\d+(\.\d+)?$/;
+                const result = floatRegex.test(diem);       //Kiểm tra điểm có hợp lệ
+                if(result){
+                    point_list.push(+diem);        //Thêm điểm vào mảng point_list
+                    setTimeout(function(){
+                        resolve();
+                    }, time * 1000);        //Sau khi nhập xong 1 cột điểm thì chờ khoảng time*1000 giây thì thực thi hàm resolve để báo nhập điểm thành công
+                }else{
+                    reject();            //Nếu điểm nhập vào không hợp lệ thì trả về lỗi
+                    point_list = [];     //Xóa toàn bộ điểm, nhập lại từ đầu
+                }
+            });
+        }
+
+        function render(){
+            //Khi mảng info có 2 phần tử là tên và môn học
+            //Khi mảng point_lis có 4 phần tử tương ứng với 4 cột điểm hợp lệ
+            //==> Thực hiện in ra màn hình
+
+            if(info.length === 2 && point_list.length === 4){        
+                spans[0].innerText = info[0];       //In tên sv ra màn hình
+                spans[1].innerText = info[1];       //In môn học
+                spans[2].innerText = calcPoint();   //Thực thi hàm tính trung bình môn và xếp loại, rồi in ra màn hình
+
+                info = [];
+                point_list = [];         //Clear mảng sau khi xuất ra màn hình các thông tin
+            }
+        }
+
+        function calcPoint(){
+            let diemTB = point_list.reduce((a, b) => a + b) / 4;    //Tính điểm trung bình môn
+            let xeploai = '';
+            if(diemTB < 5) 
+                xeploai = 'Yếu';
+            else if(5 <= diemTB && diemTB < 7)
+                xeploai = 'Trung Bình Khá';
+            else if(7 <= diemTB && diemTB < 8.5)
+                xeploai = 'Khá';
+            else if(8.5 <= diemTB && diemTB < 10)
+                xeploai = 'Giỏi';
+            return xeploai;       
+        }
+    </script>
+</body>
+</html>

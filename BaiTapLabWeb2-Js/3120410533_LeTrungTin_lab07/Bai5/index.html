@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+
+</head>
+<body>
+    <script>
+        function ThucDay() {
+            console.log("b1.Đã ngủ dậy!"); 
+            return new Promise(function(resolve){
+                resolve(1);
+            });
+        }
+        function DanhRang() {
+            console.log("b2. Đang đánh răng", arguments[0]); 
+            return new Promise(function(resolve){
+                setTimeout(function() {
+                    console.log("Đã đánh răng xong!");
+                    resolve(2);
+                }, 2000);
+            });
+        }
+        function ThayQuanAo() {
+            console.log("b3.Đang thay quần áo", arguments[0]);
+            return new Promise(function(resolve){
+                setTimeout(function() {
+                    console.log("Đã thay quần áo xong!");
+                    resolve(3);
+                }, 3000);
+            });
+        }
+        function DiHoc() {
+            console.log("b4.Đang di chuyển...", arguments[0]);
+            return new Promise(function(resolve){
+                setTimeout(function(){
+                    console.log('Đã đến trường!');
+                    resolve(4);
+                }, 4000);
+            });
+        }
+        ThucDay()
+            .then(function(){ 
+                return DanhRang(arguments[0]);
+            }) 
+            .then(function(){ 
+                return ThayQuanAo(arguments[0]);
+            }) 
+            .then(function(){ 
+                return DiHoc(arguments[0]);
+            })
+            .finally(ABC)
+
+
+        function ABC(){
+            console.log('\n\n\n\n');
+            console.log('Lệnh 1');
+            console.log('Lệnh 2');
+
+            new Promise(function(resolve){
+                setTimeout(function(){
+                    console.log('Lệnh 3');
+                    resolve();
+                }, 2000)
+            }).then(()=>{
+                console.log('Lệnh cuối');
+            });
+        }
+    </script>
+    <script>
+        // const firstPromise = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('First value');
+        //     }, 3000);
+        // });
+
+        // firstPromise
+        //     .then(value => { 
+        //         console.log(value); 
+        //         return new Promise(function(resolve){
+        //             setTimeout(function() {
+        //                 resolve('Second value');
+        //             }, 3000);
+        //         }); 
+        //     })
+        //     .then(value => { 
+        //         console.log(value); 
+        //         return new Promise(function(resolve){
+        //             setTimeout(function() {
+        //                 resolve('Third value');
+        //             }, 3000);
+        //         }); 
+        //     })
+        //     .then(value => { 
+        //         console.log(value); 
+        //     })
+        //     .finally(()=>{console.log('Xong');})
+
+
+            // const firstPromise = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         resolve('First value');
+            //     }, 3000);
+            // });
+
+            // firstPromise
+            // .then(value => { console.log(value); return "Second value"; })    
+            // .then(value => { console.log(value); return "Third value"; })
+            // .then(value => { console.log(value); })
+            //Hàm trong .then return về cái j thì hàm trong .then liền kề nó sẽ nhận kq return đó làm đối số. Đặc biệt có trường hợp kq đó lại là 1 Promise thì sẽ có chain
+
+
+        // function A(){
+        //     setTimeout(function() {
+        //         console.log('Đã chạy xong lệnh 1');
+        //     }, 2000)
+        // }
+        // function B(){
+        //     setTimeout(function() {
+        //         console.log('Đã chạy xong lệnh 2');
+        //     }, 5000)
+        // }
+        // A();
+        // B();
+
+        // function A(){
+        //     return new Promise(function(resolve) {
+        //         setTimeout(function() {
+        //             console.log('Đã chạy xong lệnh 1');
+        //             resolve();
+        //         }, 2000)
+        //     });
+        // }
+        // function B(){
+        //     return new Promise(function(resolve) {
+        //         setTimeout(function() {
+        //             console.log('Đã chạy xong lệnh 2');
+        //             resolve();
+        //         }, 5000)
+        //     });
+        // }
+
+        // // A().then(function() {      //Chạy promise A xong ròi tới B
+        // //     B();
+        // // })
+        // Promise.all([A(), B()])       //Chạy 2 promise A và B song song
+
+
+        // function A(callback) {
+        //     setTimeout(function() {
+        //         console.log('Done A');
+        //         callback("Đã thành công");
+        //     }, 3000);
+        // }
+
+        // let promise1 = new Promise(function(resolve) {
+        //     A(resolve);
+        // });
+
+        // promise1
+        //     .then(function(message) {
+        //         console.log(message);
+        //     })
+        //     .finally(()=> {
+        //         console.log('Đã hoàn tất');
+        //     })
+    </script>
+</body>
+</html>

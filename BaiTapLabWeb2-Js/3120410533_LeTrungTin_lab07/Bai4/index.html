@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+
+<body>
+    <script>
+        function ThucDay() {
+            console.log("b1.Đã ngủ dậy!"); 
+        }
+        function DanhRang() {
+            console.log("b2. Đang đánh răng"); 
+            setTimeout(function () {
+                console.log("Đã đánh răng xong!");
+            }, 2000);
+        }
+        function ThayQuanAo() {
+            console.log("b3.Đang thay quần áo");
+            setTimeout(function() {
+                console.log("Đã thay quần áo xong!");
+            }, 3000);
+        }
+        function DiHoc() {
+            console.log("b4.Đang di chuyển...");
+            setTimeout(function(){
+                console.log('Đã đến trường!');
+            }, 4000);
+        }
+        ThucDay();
+        DanhRang();
+        setTimeout(ThayQuanAo, 2100);
+        setTimeout(DiHoc, 2100 + 3100);
+    </script>
+</body>
+
+</html>

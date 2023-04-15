@@ -1,0 +1,70 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.calc-container{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .calc-main{
+        width: 450px;
+        height: 360px;
+        border: 1px solid black;
+        /* flex-shrink: 0; */
+    }
+table, th, td {
+    padding: 0;
+}
+table {
+    border: 1px solid;
+    width: 100%;
+    height: 100%;
+    border: 15px solid #CCCCCC;
+    border-spacing: 3px;
+    border-collapse: separate;   /*Mặc định bootstrap là collapse*/
+}
+td {
+    width: 0%;          /*Nếu để width ở td là 0% thì nó khác(ko cần padding ở button, thuận tiện responsive), còn ko set width thì nó khác*/
+                        /*td có padding mặc định 4 hướng là 1px*/
+    border-radius: 7px;
+    text-align: center;
+    margin: 3px;
+    overflow: hidden;
+}
+td#result {
+    border: none;
+    height: 63px;
+}
+td button.btn {
+    display: block;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 2.3rem;
+}
+td#result input#view, #view2 {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 4.7rem;
+    padding: 0 10px 0 10px;
+    /* overflow: hidden; */
+}
+#view2 {
+    border: 1px solid black;
+    outline: initial;
+}

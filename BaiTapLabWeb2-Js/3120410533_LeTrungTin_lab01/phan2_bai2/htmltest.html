@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <button type="submit" >Submit</button>
+      </form> -->
+    
+      <script>
+      // function submitForm() {
+      //   var form = $('#myForm');
+      //   var formData = form.serialize();
+      //   let queryString = new URLSearchParams(formData).toString();
+      //   var url = 'http://127.0.0.1:5500/Lab01/phan2_bai2/bai2.html';
+      //   $.get(url, formData)
+      //   .done(function(data) {
+      //     console.log(data);
+      //     // Handle the response here
+      //   })
+      //   .fail(function(jqXHR, textStatus, errorThrown) {
+      //     console.log('AJAX error:', errorThrown);
+      //     // Handle the error here
+      //   });
+      // }
+
+      // function submitForm(event) {
+      //   event.preventDefault();
+      //   var form = $('#myForm');
+      //   var formData = form.serialize();
+      //   let queryString = new URLSearchParams(formData).toString();
+      //   var url = 'http://127.0.0.1:5500/Lab01/phan2_bai2/bai2.html' + '?' + queryString;
+      //   $.get(url, {})
+      //   .done(function(data) {
+      //     console.log('ố kề');
+      //     // Handle the response here
+      //   })
+      //   .fail(function(jqXHR, textStatus, errorThrown) {
+      //     console.log('AJAX error:', errorThrown);
+      //     // Handle the error here
+      //   });
+      // }
+
+
+      // $(document).ready(function() {
+      //   $('#myForm').submit(function(event) {
+      //     submitForm(event);
+      //   })
+      // })
+      // </script>      
+
+
+
+      <form id="myForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <br>
+          <button type="submit">Submit</button>
+      </form>
+
+      <script>
+      function submitForm(e) {
+        e.preventDefault();
+        var form = document.getElementById('myForm');
+        var formData = new FormData(form);
+        var queryString = new URLSearchParams(formData).toString();
+        var url = 'http://127.0.0.1:5500/Lab01/phan2_bai2/bai2.html?' + queryString;
+        fetch(url, {
+          method: 'GET',
+        })
+        .then(function(response) {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error('Network response was not ok.');
+          }
+        })
+        .then(function(data) {
+          console.log('ố kề');
+          // Handle the response here
+        })
+        .catch(function(error) {
+          console.log('Fetch error:', error);
+          // Handle the error here
+        });
+      }
+
+
+      $(document).ready(function() {
+        $('#myForm').submit(function(event) {
+          submitForm(event);
+        })
+      })
+      </script>
+
+</body>
+</html>

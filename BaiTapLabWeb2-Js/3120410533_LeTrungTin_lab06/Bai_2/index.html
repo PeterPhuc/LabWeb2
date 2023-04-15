@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bài 2</title>
+        <style>
+            #charNum{
+                border: 1px solid #DBDBDB;
+                border-radius: 3px;
+                padding: 2px;
+                font-size: 12px;
+                margin-left: 4px;
+                margin-top: 8px;
+                visibility: hidden;
+            }
+            #char_left{
+                font-family: Verdana;
+                font-size: 12px;
+                margin-top: 8px;
+                visibility: hidden;
+            }
+            #details{
+                border: 1px solid #333;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(function(){
+                var maxLength = 100;
+                var show = false;
+                $('#details').focus(function(){
+                    $(this).css('background','#dfffff')
+                }).blur(function(){
+                    $(this).css('background','#FFF');
+                });
+                
+                $('#details').keyup(function(){
+                    var txtArea = $(this);
+                    var len = txtArea.val().length;
+                    if(len >=0 && show ==false){
+                        show = true;
+                        $('#charNum').css('visibility','visible');
+                        $('#char_left').css('visibility','visible');
+                    }
+                    let left_words = 100 - len;
+                    $('#charNum').text(left_words);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <textarea rows="4" cols="23" id="details"></textarea><br/>
+        <span id="char_left">characters left: </span><span id="charNum"></span>
+    </body>
+</html>

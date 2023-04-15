@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <div class="form-input">
+        <label for="">Subject Name</label>
+        <input type="text" name="" id="input_mon">
+        <br>
+        <label for="">Point</label>
+        <input type="text" name="" id="input_diem">
+        <br>
+        <input type="button" value="Add" id="add">
+    </div>
+    <p>Nguyễn Văn A</p>
+    <p>20</p>
+    <p>Hà Nội</p>
+    <p>Subject: </p>
+    <!-- <span>Javascript</span> - <span>8</span> -->
+
+</body>
+    <script>
+        const add_btn = document.getElementById('add');
+        const input_mon = document.getElementById('input_mon');
+        const input_diem = document.getElementById('input_diem');
+        const body = document.getElementsByTagName('body')[0];
+
+        add_btn.addEventListener('click', function(){
+            let obj_subject = {
+                mon: input_mon.value,
+                diem: input_diem.value
+            }
+            let info = `
+                <span>${obj_subject.mon}</span> - <span>${obj_subject.diem}</span><br/>
+            `;
+            body.insertAdjacentHTML("beforeend", info);
+        })
+    </script>
+</html>

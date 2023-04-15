@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body style="font-size: 22px;">
+    <input type="text" name="" id="" placeholder="Nhập tên">
+    <input type="button" value="Enter">
+    <ul></ul>
+
+    <script>
+        const $ = document.querySelector.bind(document);
+        const inp_txt = $('input[type="text"]');
+        const inp_btn = $('input[type="button"]');
+        const ul = $('ul');
+        let name_list = [];
+
+        inp_btn.addEventListener('click', function(){
+            let value_inp = inp_txt.value.trim();
+            if(value_inp) {
+                name_list.push(value_inp);
+                name_list.sort();
+                render();
+            }
+            else alert('Vui lòng nhập đầy đủ!!')
+        })
+
+        function render(){
+            const element_list = name_list.map(function(item){
+                return `<li>${item}</li>`;
+            });
+            ul.innerHTML = element_list.join('');
+        }
+    </script>
+</body>
+</html>

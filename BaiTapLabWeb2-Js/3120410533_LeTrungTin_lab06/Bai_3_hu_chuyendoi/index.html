@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bài tập 3</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(function(){
+                $(".bt").click(function(){
+                    $("#box").animate({"opacity": 0.1,"left": "400px"},1000) 
+                    .animate({"opacity": 0.4,"top": '160px',"height": '20px',"width": '20px'},"slow")
+                    .animate({"opacity": 1, "left": '0px', "height": "100px", "width": "100px"}, "slow")
+                    .animate({"opacity": 1, "left": '0px', "height": "100px", "width": "100px"}, "slow")
+                    .animate({"top": 0}, "fast")
+                    .slideUp()
+                    .slideDown("slow");
+                    return false;
+                });
+            });
+        </script>
+        <style>
+            body{
+                width: 580px;
+                margin: 20px auto;
+                padding: 0;
+                font-family: Georgia;
+            }
+            a{
+                font-weight: bold;
+                color: #002f54;
+            }
+            #box{
+                background: #0057b0;
+                height: 100px;
+                width: 100px;
+                position: relative;
+            }
+        </style>
+    </head>
+<body>
+    <p><a href="#" class="bt">Run</a></p>
+    <div id="box"></div>
+</body>
+</html>

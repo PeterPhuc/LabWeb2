@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper {
+      width: 75%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      /* overflow: visible !important; */
+    }
+
+    .swiper-wrapper {
+        display: flex;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: auto;
+      /* max-height: 460px; */
+      height: auto;
+      padding: 0 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .swiper-slide img {
+      display: block;
+      /* max-width: 180px;
+      max-height: 460px; */
+      width: 138px;
+      /* height: auto; */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola1.png" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola2.png" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola3.png" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola4.png" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola5.png" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./Cocacola/cocacola6.png" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <style>
+    .container1{
+        width: 100%;
+        margin: 300px auto 500px;
+    }
+        .flex{
+            width: 80%;
+            background-color: red;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 100px;
+        }
+            .item{
+                min-width: 300px;
+                width: 800px;
+                height: auto;
+            }
+                .container1 .item img {
+                    max-width: 300px;
+                    max-height: 50px;
+                }
+  </style>
+
+  <div class="container1">
+    <div class="flex">
+        <div class="item">
+            <img src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg" alt="">
+        </div>
+    </div>
+  </div>
+
+
+  <style>
+    .spining-container{
+        width: 100%;
+        height: auto;
+        margin: 0 auto 500px;
+        display: flex;
+        justify-content: center;
+    }
+        .spining-main{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            background-image: conic-gradient(from 0deg, blue 0%, #EEEEEE 0%);
+            /* transition: background-image 5s linear; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+
+            animation: xoay 2s linear infinite;
+        }
+        @keyframes xoay {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+            .spining-main::before {
+                content: "";
+                display: block;
+                width: 80%;
+                height: 80%;
+                border-radius: inherit;
+                background-color: #EEEEEE;
+            }
+  </style>
+  <div class="spining-container">
+      <div class="spining-main">
+
+      </div>
+  </div>
+
+  <script>
+    let spinner = document.querySelector('.spining-main');
+    let index = -1;
+    spinner.addEventListener('click', function(){
+        index++;
+        for(let i = 10; i <= 90; i++){
+            setTimeout(function(){
+                this.style.cssText = `
+                    background-image: conic-gradient(from ${-1 * index * 36}deg, blue ${i}%, #EEEEEE ${i}%);
+                `;
+            }.bind(this), i * 15);
+        }
+
+        setTimeout(function(){
+            index++;
+            for(let i = 10; i <= 90; i++){
+                setTimeout(function(){
+                    this.style.cssText = `
+                        background-image: conic-gradient(from ${-1 * index * 36}deg, #EEEEEE ${i}%, blue ${i}%);
+                    `;
+                }.bind(this), i * 15);
+            }
+        }.bind(this), 2000)
+    })
+
+    spinner.click();
+    setInterval(function(){
+      spinner.click();
+    }, 4000);
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 1,
+        depth: 300,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+</body>
+
+</html>

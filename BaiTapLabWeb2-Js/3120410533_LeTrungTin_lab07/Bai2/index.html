@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <div class="form-input">
+        <label for="">1st Person Name</label>
+        <input type="text" name="" id="">
+        <br>
+        <label for="">1st Person Age</label>
+        <input type="text" name="" id="">
+        <br>
+        <label for="">1st Person Address</label>
+        <input type="text" name="" id="">
+        <br>
+        <label for="">2nd Person Name</label>
+        <input type="text" name="" id="">
+        <br>
+        <label for="">2nd Person Age</label>
+        <input type="text" name="" id="">
+        <br>
+        <label for="">2nd Person Address</label>
+        <input type="text" name="" id="">
+        <br>
+        <input type="button" value="Show profile" id="show_btn">
+    </div>
+</body>
+<script>
+    function Person(name, age, address){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.showProfile = function(){
+            let info = `
+                <div>
+                    <p style="color: red">Person ${this.name}: </p>
+                    <p>Name: ${this.name}</p>
+                    <p>Age: ${this.age}</p>
+                    <p>Address: ${this.address}</p>
+                </div>
+            `;
+            document.getElementsByTagName('body')[0].insertAdjacentHTML("beforeend", info);
+        }
+    }
+    function GanGiaTri(name, age, address){
+        this.__proto__ = new Person(...arguments);
+    }
+
+    const inputs = document.querySelectorAll('input[type="text"]');
+    document.querySelector('input[type="button"]').addEventListener('click', function(){
+        let validate = CheckBoTrong(inputs);
+        if(validate) {
+            const FirstPerson = new GanGiaTri(inputs[0].value, inputs[1].value, inputs[2].value);
+            const SecondPerson = new GanGiaTri(inputs[3].value, inputs[4].value, inputs[5].value);
+            FirstPerson.showProfile();
+            SecondPerson.showProfile();
+        }
+    })
+
+    function CheckBoTrong(inputs){
+        for (let index = 0; index < inputs.length; index++) {
+            if(!inputs[index].value){
+                alert('Yêu cầu nhập đầy đủ thông tin');
+                return;
+            }
+        }
+        return true;
+    }
+</script>
+</html>

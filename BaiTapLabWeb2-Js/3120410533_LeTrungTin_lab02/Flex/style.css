@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+    .flex-container{
+        border: 1px solid black;
+        margin: 100px auto 100px;
+        width: 90%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+        .flex-item{
+            /* width: 40%; */
+            width: 100px;
+            height: 200px;
+        }
+        .flex-item:first-child{
+            /* width: 40%; */
+            width: 200px;
+            flex-shrink: 3;
+        }
+
+    .container{
+        --border-eye: 0px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        margin: 0 auto 400px;
+        border-radius: 50%;
+
+        box-sizing: initial;
+    }
+        .box-xoay{
+            pointer-events: none;
+            width: 30%;
+            height: 30%;
+            background-color: blue;
+            border-radius: inherit;
+            -webkit-animation: trans 1s linear infinite;
+                    animation: trans 1s linear infinite;
+            transform-origin: center calc(150px - var(--border-eye));  /*d = 150 --> R = 150 - 90 = 60*/
+            position: relative;
+            top: var(--border-eye);
+            left: calc(50% - (90px/2));
+        }
+        .xoay2 {
+            background-color: red;
+            top: calc(100% - (90px + 90px) - var(--border-eye));    
+            transform-origin: center calc(-1 * (60px - var(--border-eye)));  /*R = d = 60*/
+        }
+        @-webkit-keyframes trans {
+            0% {
+                transform: rotate(0deg);
+            }100% {
+                transform: rotate(1turn);
+            }
+        }
+        @keyframes trans {
+            0% {
+                transform: rotate(0deg);
+            }100% {
+                transform: rotate(1turn);
+            }
+        }
+
+    
+    .container2 {
+        width: 100%;
+        height: fit-content;
+        border: 1px solid black;
+        margin-bottom: 400px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .test-bar{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            transform-origin: -150px center;
+            margin: 0px auto 0;
+
+            animation: trans .2s linear infinite;
+        }
+        /* .pos2 {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: -150px;
+            left: auto;
+            background-color: blue;
+        } */
+
+    /*
+        Đối với tâm quay dương:  d >= 0
+            Gọi d là khoảng cách từ tâm quay đến điểm xa tâm nhất của object
+            --> R = d - width(height) của object
+
+        Đối với tâm quay âm:   d < 0
+            Gọi d là khoảng cách từ tâm quay đến điểm gần tâm nhất của object
+            --> R = d
+    */
+
+/* @property --a {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+@property --mamau1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: transparent;
+}
+@property --mamau2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: transparent;
+}
+.container3 {
+    --size-main: 300px;
+    --timing: 1s;
+    --a: 10%;
+    --mamau1: blue;
+    --mamau2: white;
+    border-radius: 50%;
+    width: var(--size-main);
+    height: var(--size-main);
+    margin: 0 auto 500px;
+    background-color: red;
+    animation: xoay23 calc(var(--timing)*2) ease-in-out infinite, 
+               doiMau calc(var(--timing)*2) steps(3) infinite, 
+               xoay1 2s linear infinite;
+    background:conic-gradient(from 0deg, var(--mamau1) var(--a), var(--mamau2) var(--a));
+
+    position: relative;
+}
+.container3::before {
+    --size: 92%;
+    content: "";
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    border-radius: inherit;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+@keyframes xoay23 {
+    0% {
+        --a: 0%;
+    }50%{
+        --a: 100%;
+    }50.0001%{
+        --a: 0%;
+    }100%{
+        --a: 100%;
+    }
+}
+@keyframes doiMau {
+    0%, 50%{
+        --mamau1: blue;
+        --mamau2: white;
+    }
+    50.0001%, 100%{
+        --mamau1: white;
+        --mamau2: blue;
+    }
+}
+@keyframes xoay1 {
+    0% {
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);    
+    }
+}
+span {
+    opacity: 0;
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+span:nth-child(2) {
+    transform: translateX(-50%) rotateZ(90deg);
+} */
+  

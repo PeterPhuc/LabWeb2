@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+</head>
+
+<body>
+    <style>
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px 0;
+            font-size: 25px;
+        }
+
+        a:hover {
+            background-color: red;
+            color: white !important;
+        }
+
+        p {
+            font-size: 27px;
+        }
+    </style>
+    <!-- <div class="flex-container">
+        <div class="flex-main">
+            <img src="./Planet9_Wallpaper_5000x2813.jpg" alt="">
+        </div>
+    </div> -->
+    <!-- <div class="flex-container">
+        <div class="flex-item" style="background-color: red;"></div>
+        <div class="flex-item" style="background-color: orange;"></div>
+        <div class="flex-item" style="background-color: yellow;"></div>
+        <div class="flex-item" style="background-color: blue;"></div>
+        <div class="flex-item" style="background-color: green;"></div>
+        <div class="flex-item" style="background-color: purple;"></div>
+    </div>
+
+
+    
+    <div class="container">
+        <div class="box-xoay">
+
+        </div>
+        <div class="box-xoay xoay2">
+
+        </div>
+    </div>
+
+
+    <div class="container2">
+        <div class="test-bar">
+
+        </div>
+        <div class="pos2"></div>
+    </div>
+
+
+    <style>
+        .contain-flex{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: 500px;
+        }
+            .flex{
+                width: 1000px;
+                height: 100px;
+                max-height: 100px;
+            }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+    </style>
+    <div class="contain-flex">
+        <div class="flex">
+            <img src="https://i.pinimg.com/originals/0a/4d/cb/0a4dcb92fa2d3c601b58d72720d6bec4.jpg" alt="">
+        </div>
+    </div>
+
+
+    <div class="container3">
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <style>
+        @property --a {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+        }
+        @property --mamau1 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: transparent;
+        }
+        @property --mamau2 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: transparent;
+        }
+        @property --r {
+            syntax: '<angle>';
+            inherits: false;
+            initial-value: 0%;
+        }
+        .box-main-1 {
+            width: 100%;
+            height: 300px;
+            margin: 0 auto 500px;
+            display: flex;
+            justify-content: center;
+            /* background-color: red; */
+
+            position: relative;
+        }
+            .box-turn{
+                --size-main: 300px;
+                --timing: 1s;
+                --a: 10%;
+                --mamau1: blue;
+                --mamau2: white;
+                width: 300px;
+                height: 300px;
+                border: 1px solid black;
+                border-radius: 50%;
+                position: absolute;
+            }
+            /* .box-turn--3 {
+                background: conic-gradient(from 0deg, transparent 90%, white 90%);
+                z-index: 0;
+            } */
+            .box-turn--1{
+                background-color: blue;
+                z-index: 1;
+            }
+            .box-turn--2{
+                --size-main: 300px;
+                --timing: 1s;
+                --a: 10%;
+                --mamau1: transparent;
+                --mamau2: white;
+                --r: 0deg;
+                animation: xoay23 calc(var(--timing)*2) ease-in-out infinite, 
+                           doiMau calc(var(--timing)*2) steps(3) infinite, 
+                           xoay1 2s linear infinite;
+                background:conic-gradient(from var(--r), var(--mamau1) var(--a), var(--mamau2) var(--a));
+                z-index: 3;
+            }
+            @keyframes xoay23 {
+                0% {
+                    --a: 0%;  /*trong trắng*/
+                }50%{
+                    --a: 75%; /*trong trắng*/
+                }50.0001%{
+                    --a: 15%;
+                    /* --r: -15deg; */
+                }100%{
+                    --a: 100%;
+                    /* --r: 0deg; */
+                }
+            }
+            @keyframes doiMau {
+                0%, 50%{
+                    --mamau1: transparent;
+                    --mamau2: white;
+                }
+                50.0001%, 100%{
+                    --mamau1: white;
+                    --mamau2: transparent;
+                }
+            }
+    </style>
+
+    <div class="box-main-1">
+        <div class="box-turn box-turn--1"></div>
+        <div class="box-turn box-turn--2"></div>
+        <div class="box-turn box-turn--3"></div>
+    </div> -->
+    <a href="#" data-index="1" style="color: red;">Link to Element 1</a>
+    <a href="#" data-index="2" style="color: blue;">Link to Element 2</a>
+    <a href="#" data-index="3" style="color: rgb(172, 0, 220);">Link to Element 3</a>
+
+    <p style="font-size: 27px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quo, voluptatum vitae laboriosam nam sequi,
+        libero modi, delectus fugiat consequatur consequuntur id optio nihil voluptatibus nulla repudiandae vero?
+        Delectus, voluptatibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta commodi officia quaerat, quae sint omnis,
+        blanditiis esse, eos architecto molestias ex cum numquam. Cum sunt ratione dolore ullam possimus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas amet placeat repellendus veritatis quos
+        repellat esse saepe quod reprehenderit sunt blanditiis voluptatem libero fugiat voluptatum eaque, quidem, eius
+        aperiam? Atque.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex velit qui laboriosam consequatur saepe cumque sed
+        iste sequi laborum, laudantium numquam quos eaque placeat enim aperiam alias accusamus odio illum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, inventore laudantium? Cum consequuntur
+        aliquid vitae voluptates? Beatae magni vero, illo, atque, aliquam ipsum tempore voluptatum quia dolorum nostrum
+        recusandae quas?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam
+        suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+        Sint, incidunt!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam
+        suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+        Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+        doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+        doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+        cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+        mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+        laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+        facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+        incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+        veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque
+        ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+        doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+        doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+        cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+        mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+        laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+        facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+        incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+        veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque
+        ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+        doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+        doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+        cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+        mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit
+        <div id="my-element1" style="background-color: red;">Hello 1</div>
+        <p>amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div id="my-element2" style="background-color: blue;">Hello 2</div>
+    <p> exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus,
+    laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor
+    sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere,
+    possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit
+    facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint,
+    incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint,
+    </p>
+    <div id="my-element3" style="background-color: rgb(172, 0, 220);">Hello 3</div>
+    <p> incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque, doloribus
+    veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea?
+    Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius eaque,
+    doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos doloribus
+    atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem eius
+    eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut quos
+    doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem
+    eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate unde! Odio ut
+    quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+    exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus cupiditate
+    unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia repellendus
+    cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam mollitia
+    repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Voluptate exercitationem eius eaque, doloribus veniam suscipit facere, possimus, laboriosam
+    mollitia repellendus cupiditate unde! Odio ut quos doloribus atque ea? Sint, incidunt!
+    </p>
+
+    <script>
+        const achors = document.querySelectorAll('a');
+        for (const a of achors) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                linkToElement(document.querySelector(`#my-element${this.getAttribute('data-index')}`));
+            })
+        }
+        function linkToElement(id) {
+            const elementRect = id.getBoundingClientRect();
+            window.scrollTo(
+                {
+                    top: elementRect.top + window.scrollY - 100,
+                    behavior: 'smooth'    
+                    // default: behavior: 'instant'
+                }
+            );
+            // window.location.hash = `${window.location.href}#${id.getAttribute('id')}`;
+        }
+    </script>
+
+<style>
+    .ytp-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    margin-left: -32px;
+    z-index: 18;
+    pointer-events: none
+}
+
+.ytp-big-mode .ytp-spinner {
+    width: 128px;
+    margin-left: -64px
+}
+
+.ytp-spinner-message {
+    position: absolute;
+    left: 50%;
+    margin-top: 50%;
+    width: 300px;
+    font-size: 127%;
+    line-height: 182%;
+    margin-left: -150px;
+    display: none;
+    text-align: center;
+    background-color: black;
+    opacity: .5
+}
+
+.ytp-spinner-container {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -50%;
+    -o-animation: ytp-spinner-linspin 1.5682352941176s linear infinite;
+    animation: ytp-spinner-linspin 1.5682352941176s linear infinite;
+    -webkit-animation: ytp-spinner-linspin 1.5682352941176s linear infinite
+}
+
+.ytp-spinner-rotator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: ytp-spinner-easespin 5332ms cubic-bezier(.4,0,.2,1) infinite both;
+    -o-animation: ytp-spinner-easespin 5332ms cubic-bezier(.4,0,.2,1) infinite both;
+    animation: ytp-spinner-easespin 5332ms cubic-bezier(.4,0,.2,1) infinite both
+}
+
+.ytp-spinner-left,.ytp-spinner-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden
+}
+
+.ytp-spinner-left {
+    right: 49%
+}
+
+.ytp-spinner-right {
+    left: 49%
+}
+
+.ytp-spinner-circle {
+    --abc: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    /* width: 200%;
+    height: 100%; */
+    width: calc(var(--abc)*2);
+    height: var(--abc);
+    border-style: solid;
+    border-color: red red transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border-width: 10px;
+}
+
+.ytp-big-mode .ytp-spinner-circle {
+    border-width: 12px
+}
+
+.ytp-spinner-left .ytp-spinner-circle {
+    left: 0;
+    right: -100%;
+    border-right-color: transparent;
+    -webkit-animation: ytp-spinner-left-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both;
+    -o-animation: ytp-spinner-left-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both;
+    animation: ytp-spinner-left-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both;
+}
+
+.ytp-spinner-right .ytp-spinner-circle {
+    left: -100%;
+    right: 0;
+    border-left-color: transparent;
+    -webkit-animation: ytp-right-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both;
+    -o-animation: ytp-right-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both;
+    animation: ytp-right-spin 1333ms cubic-bezier(.4,0,.2,1) infinite both
+}
+
+@-webkit-keyframes ytp-spinner-linspin {
+    to {
+        -webkit-transform: rotate(1turn)
+    }
+}
+
+@-o-keyframes ytp-spinner-linspin {
+    to {
+        -webkit-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes ytp-spinner-linspin {
+    to {
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@-webkit-keyframes ytp-spinner-easespin {
+    12.5% {
+        -webkit-transform: rotate(135deg)
+    }
+
+    25% {
+        -webkit-transform: rotate(270deg)
+    }
+
+    37.5% {
+        -webkit-transform: rotate(405deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(540deg)
+    }
+
+    62.5% {
+        -webkit-transform: rotate(675deg)
+    }
+
+    75% {
+        -webkit-transform: rotate(810deg)
+    }
+
+    87.5% {
+        -webkit-transform: rotate(945deg)
+    }
+
+    to {
+        -webkit-transform: rotate(3turn)
+    }
+}
+
+@-o-keyframes ytp-spinner-easespin {
+    12.5% {
+        -webkit-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg)
+    }
+
+    25% {
+        -webkit-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg)
+    }
+
+    37.5% {
+        -webkit-transform: rotate(405deg);
+        -o-transform: rotate(405deg);
+        transform: rotate(405deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(540deg);
+        -o-transform: rotate(540deg);
+        transform: rotate(540deg)
+    }
+
+    62.5% {
+        -webkit-transform: rotate(675deg);
+        -o-transform: rotate(675deg);
+        transform: rotate(675deg)
+    }
+
+    75% {
+        -webkit-transform: rotate(810deg);
+        -o-transform: rotate(810deg);
+        transform: rotate(810deg)
+    }
+
+    87.5% {
+        -webkit-transform: rotate(945deg);
+        -o-transform: rotate(945deg);
+        transform: rotate(945deg)
+    }
+
+    to {
+        -webkit-transform: rotate(3turn);
+        -o-transform: rotate(3turn);
+        transform: rotate(3turn)
+    }
+}
+
+@keyframes ytp-spinner-easespin {
+    12.5% {
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg)
+    }
+
+    25% {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg)
+    }
+
+    37.5% {
+        -webkit-transform: rotate(405deg);
+        -moz-transform: rotate(405deg);
+        -o-transform: rotate(405deg);
+        transform: rotate(405deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(540deg);
+        -moz-transform: rotate(540deg);
+        -o-transform: rotate(540deg);
+        transform: rotate(540deg)
+    }
+
+    62.5% {
+        -webkit-transform: rotate(675deg);
+        -moz-transform: rotate(675deg);
+        -o-transform: rotate(675deg);
+        transform: rotate(675deg)
+    }
+
+    75% {
+        -webkit-transform: rotate(810deg);
+        -moz-transform: rotate(810deg);
+        -o-transform: rotate(810deg);
+        transform: rotate(810deg)
+    }
+
+    87.5% {
+        -webkit-transform: rotate(945deg);
+        -moz-transform: rotate(945deg);
+        -o-transform: rotate(945deg);
+        transform: rotate(945deg)
+    }
+
+    to {
+        -webkit-transform: rotate(3turn);
+        -moz-transform: rotate(3turn);
+        -o-transform: rotate(3turn);
+        transform: rotate(3turn)
+    }
+}
+
+@-webkit-keyframes ytp-spinner-left-spin {
+    from {
+        -webkit-transform: rotate(130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(-5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(130deg)
+    }
+}
+
+@-o-keyframes ytp-spinner-left-spin {
+    from {
+        -webkit-transform: rotate(130deg);
+        -o-transform: rotate(130deg);
+        transform: rotate(130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        transform: rotate(-5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(130deg);
+        -o-transform: rotate(130deg);
+        transform: rotate(130deg)
+    }
+}
+
+@keyframes ytp-spinner-left-spin {
+    from {
+        -webkit-transform: rotate(130deg);
+        -moz-transform: rotate(130deg);
+        -o-transform: rotate(130deg);
+        transform: rotate(130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        transform: rotate(-5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(130deg);
+        -moz-transform: rotate(130deg);
+        -o-transform: rotate(130deg);
+        transform: rotate(130deg)
+    }
+}
+
+@-webkit-keyframes ytp-right-spin {
+    from {
+        -webkit-transform: rotate(-130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(-130deg)
+    }
+}
+
+@-o-keyframes ytp-right-spin {
+    from {
+        -webkit-transform: rotate(-130deg);
+        -o-transform: rotate(-130deg);
+        transform: rotate(-130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(5deg);
+        -o-transform: rotate(5deg);
+        transform: rotate(5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(-130deg);
+        -o-transform: rotate(-130deg);
+        transform: rotate(-130deg)
+    }
+}
+
+@keyframes ytp-right-spin {
+    from {
+        -webkit-transform: rotate(-130deg);
+        -moz-transform: rotate(-130deg);
+        -o-transform: rotate(-130deg);
+        transform: rotate(-130deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(5deg);
+        -moz-transform: rotate(5deg);
+        -o-transform: rotate(5deg);
+        transform: rotate(5deg)
+    }
+
+    to {
+        -webkit-transform: rotate(-130deg);
+        -moz-transform: rotate(-130deg);
+        -o-transform: rotate(-130deg);
+        transform: rotate(-130deg)
+    }
+}
+</style>
+<div class="ytp-spinner" data-layer="4" style=""><div class="ytp-spinner-container"><div class="ytp-spinner-rotator"><div class="ytp-spinner-left"><div class="ytp-spinner-circle"></div></div><div class="ytp-spinner-right"><div class="ytp-spinner-circle"></div></div></div></div><div class="ytp-spinner-message" style="display: none;">Nếu phát lại không bắt đầu ngay, hãy thử khởi động lại thiết bị của bạn.</div></div>
+</body>
+
+</html>

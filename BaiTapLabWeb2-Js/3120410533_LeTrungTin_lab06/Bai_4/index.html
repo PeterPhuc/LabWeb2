@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hiệu ứng chuyển đồi ảnh dùng animate</title>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+        <style>
+            .wrapper{
+                width: 300px;
+                height: 300px;
+                margin: 100px 10px;
+                /* float: left; */
+                position: relative;
+                /* overflow: hidden; */
+            }
+            img{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            img#thisday {
+                top: -30px;
+            }
+        </style>
+      
+       <script>
+            $(function(){
+                $(function(){
+                        $(document).tooltip({
+                            item: 'img',
+                            content: `<img src="Duck-Hunt-Lite.png" class="front" id="thisday"/>`
+                        });
+                });
+            });
+      </script>
+    </head>
+    <body>
+        <div class="wrapper bca">
+            <img id="abc" src="Duck-Hunt-Lite-Back.png" />
+            <!-- <img src="Duck-Hunt-Lite.png" class="front" id="thisday"/> -->
+        </div>
+        <div class="wrapper">
+            <img src="Weather-Update-Back.png" />
+            <img src="Weather-Update.png" class="front" />
+        </div>
+        <div class="wrapper">
+            <img src="Math-Games-Back.png" />
+            <img src="Math-Games.png" class="front" />
+        </div>
+        <div class="wrapper">
+            <img src="Compass-Back.png" />
+            <img src="Compass.png" class="front" />
+        </div>
+    </body>
+</html>

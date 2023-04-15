@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 lab 10</title>
+    <style>
+        * {
+            font-size: 20px;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        table, td, th {
+            border: 1px solid #000;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 1000px;
+        }
+        td, th {
+            padding: 10px 20px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .action {
+            width: 100%;
+            text-align: center;
+        }
+        .edit-area {
+            text-align: center;
+            width: 100%;
+            margin: 20px 0;
+            display: none;
+        }
+        input {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="action">
+        <button class="cookie-list" onclick="show(this)">Danh sách cookie</button>
+        <button class="cookie-add" style="margin: 10px 0;" onclick="add(this)">Thêm cookie</button>
+    </div>
+
+    <div class="edit-area">
+        <input type="text" name="name" id="" placeholder="Tên cookie">
+        <br>
+        <input type="text" name="value" id="" placeholder="Giá trị">
+        <br>
+        <button class="btn-enter">Enter</button>
+    </div>
+    <table>
+        <caption>Danh sách Cookie</caption>
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Giá trị</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+
+    <script>
+        const tbody = document.querySelector('table tbody');
+        const edit_area = document.querySelector('.edit-area');
+        const input_name = document.querySelector('input[name="name"]');
+        const input_val = document.querySelector('input[name="value"]');
+        const btn_enter = document.querySelector('.btn-enter');
+
+        function show(btn){
+            edit_area.style.display = 'none';
+            if(!document.cookie){
+                tbody.innerHTML = '';
+                return;
+            }
+            let cookies = document.cookie.split(';');
+        
+            let map_arr = cookies.map(function(item, index){
+                let key_val = item.split('=');
+                return `
+                    <tr>
+                        <td>${key_val[0]}</td>
+                        <td>${key_val[1]}</td>
+                        <td>
+                            <button class="cookie-edit" onclick="edit(this)">Sửa</button>
+                            <button class="cookie-del" onclick="del(this)">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+            tbody.innerHTML = map_arr;
+        }
+        function add() {
+            edit_area.style.display = 'block';
+            btn_enter.onclick = XuLyAdd;
+        }
+        function del(btn) {
+            edit_area.style.display = 'none';
+            let current_tr = btn.parentElement.parentElement;
+            let td_nameCook = current_tr.firstElementChild.innerText.trim();
+            if(td_nameCook){
+                document.cookie = `${td_nameCook}=;max-age=0;`;
+                current_tr.remove();
+                alert(`Xóa cookie ${td_nameCook} thành công`);
+            }
+        }
+        function edit(btn) {
+            edit_area.style.display = 'block';
+            btn_enter.onclick = XuaLyEdit.bind(btn);
+        }
+        function XuaLyEdit() {
+            let cookie_name = input_name.value.trim();
+            let cookie_val = input_val.value.trim(); 
+            let alert_s = '';
+            if(cookie_name && cookie_val){
+                let current_tr = this.parentElement.parentElement;
+                let currentTd_st = current_tr.children[0];
+                let currentTd_nd = current_tr.children[1];
+
+                if(currentTd_st.innerText !== cookie_name){
+                    document.cookie = `${currentTd_st.innerText}=;max-age=0;`;
+                    currentTd_st.innerText = cookie_name;
+                }
+                document.cookie = `${cookie_name} = ${cookie_val}; Secure`;
+                currentTd_nd.innerText = cookie_val;
+               
+                alert_s = 'Sửa cookie thành công!';
+                edit_area.style.display = 'none';
+            }else{
+                alert_s = 'Hãy nhập đầy đủ thông tin!';
+            }
+            alert(alert_s);
+        }
+        function XuLyAdd() {
+            let cookie_name = input_name.value;
+            let cookie_val = input_val.value;
+            let alert_s = '';
+            if(cookie_name && cookie_val){
+                document.cookie = `${cookie_name} = ${cookie_val}; Secure`;
+                tbody.insertAdjacentHTML('beforeend', `
+                    <tr>
+                        <td>${cookie_name}</td>
+                        <td>${cookie_val}</td>
+                        <td>
+                            <button class="cookie-edit" onclick="edit(this)">Sửa</button>
+                            <button class="cookie-del" onclick="del(this)">Xóa</button>
+                        </td>
+                    </tr>
+                `);
+                alert_s = 'Thêm cookie thành công';
+                edit_area.style.display = 'none';
+            }else{
+                alert_s = 'Hãy nhập đầy đủ thông tin!';
+            }
+            alert(alert_s);
+        }
+    </script>
+</body>
+</html>
